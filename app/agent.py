@@ -32,7 +32,9 @@ faq_embeddings = model.encode(faq_questions, convert_to_tensor=True)
 faq_ans_embeddings = model.encode(faq_answers, convert_to_tensor=True)
 
 
-def get_faq_answer(user_question, threshold=0.5):
+def get_faq_answer(user_question : str)-> str:
+    threshold=0.5
+    user_question = user_question.strip().lower()
     query_embedding = model.encode(user_question, convert_to_tensor=True) #embeding of user query
 
 
@@ -49,7 +51,7 @@ def get_faq_answer(user_question, threshold=0.5):
         best_score = float(answer_scores[best_score_idx])                   # if we cant find similarity between question , compare with answers too 
         if best_score > threshold:
             return faq_answers[best_score_idx]
-        return "Sorry, I don't know the answer to that."          # if similarity score is below threshold for both case just say i dont know.LLm will handle rest
+        return ''          # if similarity score is below threshold for both case just say i dont know.LLm will handle rest
 
 
 root_agent = Agent(
