@@ -32,8 +32,8 @@ This repository contains a tool-augmented AI agent for handling FAQ-based custom
 
 ### Step 1: Clone the repository
 ```bash
-git clone https://github.com/your-username/nugenomics-faq-agent.git
-cd nugenomics-faq-agent
+git clone https://github.com/deepuezhap/AI-Agent.git
+cd AI-Agent
 ```
 ### Step 2: Set up Python environment
 ```bash
